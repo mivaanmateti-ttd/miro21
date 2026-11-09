@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miro</title>
+<style>
+html,body{height:100%;margin:0;overflow:hidden}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;font:16px system-ui,Arial,sans-serif;background:radial-gradient(circle at 50% 45%,#fffbeb 0%,#fff 60%);animation:out .5s ease-in 1.5s forwards}
+.logo{position:relative;width:170px;height:170px;opacity:0;transform:scale(.8);animation:logoIn .7s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.logo img{position:absolute;top:0;left:0;width:170px;height:170px}
+.glow{position:absolute;top:-34px;left:-34px;width:238px;height:238px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.55) 0%,rgba(251,146,60,.25) 40%,rgba(251,146,60,0) 68%);animation:pulse 2.8s ease-in-out infinite}
+.ring{animation:chakra 10s linear infinite;will-change:transform}
+.core{z-index:2}
+h1{margin:22px 0 0;font-size:34px;letter-spacing:2px;color:#1e3a8a;opacity:0;animation:fadeUp .6s ease-out .45s forwards}
+@keyframes chakra{to{transform:rotate(360deg)}}
+@keyframes logoIn{to{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{opacity:.25;transform:scale(.9)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes out{to{opacity:0}}
+@media (prefers-reduced-motion:reduce){.ring,.glow{animation:none}}
+</style></head><body>
+<div class="logo">
+  <div class="glow"></div>
+  <img class="ring" src="logo_ring.png" alt="">
+  <img class="core" src="logo_core.png" alt="Miro">
+</div>
+<h1>Miro</h1>
+</body></html>
