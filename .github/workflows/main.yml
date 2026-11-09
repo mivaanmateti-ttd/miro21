@@ -1,0 +1,29 @@
+
+name: Build MIRO Android App Bundle
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build Android AAB
+        run: |
+          cd miro-android
+          gradle bundleRelease --no-daemon
+
+      - name: Upload AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: MIRO-release-AAB
+          path: miro-android/app/build/outputs/bundle/release/app-release.aab
